@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Strongroom Cloud</title>
-  <meta name="description" content="Case study of the Project Name project by Fin Diepman." />
+  <meta name="description" content="Case study of the Strongroom Cloud project by Fin Diepman." />
   <link rel="icon" href="../icon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -71,14 +71,14 @@
       <h1 class="proj-title">Strongroom Cloud</h1>
       <p class="proj-tagline">Strongroom is my personal file storage cloud that i can access from anywhere. I built it because i wanted my data to stay on my own server and not on that of others. I also use it for transfering big files from my devices.</p>
       <div class="proj-actions">
-        <a href="https://github.com/FinDiepman" target="_blank" rel="noopener" class="btn btn-solid">View code &#8599;</a>
+        <a href="https://github.com/Findiepman/Strongroom" target="_blank" rel="noopener" class="btn btn-solid">View code &#8599;</a>
       </div>
     </div>
   </section>
 
   <div class="container">
     <figure class="proj-shot">
-      <img src="../img/strongroom2.png" alt="Screenshot of the project" />
+      <img src="../img/strongroom-home.png" alt="Screenshot of the Strongroom home page" />
     </figure>
   </div>
 
@@ -90,15 +90,21 @@
         <div class="proj-section">
           <h2 class="proj-section-title">what it is</h2>
           <p class="">Strongroom cloud is my personal storage cloud that i can access from anywhere. I built it because im getting into homelabbing and this was a perfect project for this. Now i never have to pay for cloud storage again.</p>
+          <p>I made this with a lot of help from AI. I came up with the idea and what it should do, and kept testing and tweaking it until it worked how i wanted.</p>
         </div>
 
         <div class="proj-section">
-          <h2 class="proj-section-title">how i built it</h2> <!--
-          <p class="">[ The interesting part: what tech did you use and what problems did you solve? Feel free to use a list: ]</p>
+          <h2 class="proj-section-title">how it's built</h2>
+          <p>It's built with Node JS + Express for the backend and plain HTML, CSS and Javascript for the frontend. No frameworks or build step.</p>
           <ul>
-            <li class="">[ e.g. how you store the data ]</li>
-            <li class="">[ e.g. a tricky feature and how you solved it ]</li>
-          </ul>-->
+            <li>Accounts and the audit log are stored in an SQLite database using better-sqlite3</li>
+            <li>Auth: JWT in secure cookies and passwords are hashed with bcrypt</li>
+            <li>Admins can create accounts, set a storage quota per user and see a log of every login, upload, download and deletion</li>
+            <li>Upload single files, batches or whole folders and download folders as a zip</li>
+            <li>Preview images, PDFs and text files right in the browser</li>
+            <li>Every user also gets SFTP access to their own folder with the same login, so it can even sync with Windows Explorer through rclone</li>
+            <li>A GitHub puller: paste a repo link and the server clones it for you with a live log</li>
+          </ul>
         </div>
 
         <div class="proj-section">
@@ -119,6 +125,7 @@
         <div>
           <p class="fact-label">built with</p>
           <div class="fact-tags">
+            <span class="tag pixel">AI-assisted</span>
             <span class="tag pixel">Javascript/Node JS</span>
             <span class="tag pixel">Linux</span>
             <span class="tag pixel">Cloudflare</span>
@@ -144,28 +151,24 @@
       </div>
       <div class="gallery-grid">
         <figure class="gallery-item">
-          <img src="../img/strongroom1.png" alt="Project screenshot" loading="lazy" />
-          <figcaption class="">Login page that a new user sees when opening the page.</figcaption>
+          <img src="../img/strongroom-home.png" alt="Strongroom home page with storage, uploads, pinned folders and activity" loading="lazy" />
+          <figcaption>This is the homepage. Here you can see your storage, recent uploads, pinned folders and what happened lately.</figcaption>
         </figure>
         <figure class="gallery-item">
-          <img src="../img/strongroom2.png" alt="Project screenshot" loading="lazy" />
-          <figcaption class="">Homepage where you can see all the files and folders.</figcaption>
+          <img src="../img/strongroom-files.png" alt="Strongroom file browser in grid view" loading="lazy" />
+          <figcaption>Here you can see all your files and folders. Images get a thumbnail and you can filter and sort everything.</figcaption>
         </figure>
         <figure class="gallery-item">
-          <img src="../img/strongroom67.png" alt="Project screenshot" loading="lazy" />
-          <figcaption class="">This shows how the github repo puller looks like</figcaption>
+          <img src="../img/strongroom-github.png" alt="Strongroom GitHub puller" loading="lazy" />
+          <figcaption>This is what the GitHub puller looks like. Paste a repo and it gets cloned onto the server.</figcaption>
         </figure>
         <figure class="gallery-item">
-          <img src="../img/strongroom4.png" alt="Project screenshot" loading="lazy" />
-          <figcaption class="">The admin panel with logs and account creation.</figcaption>
+          <img src="../img/strongroom-admin.png" alt="Strongroom admin panel with accounts, quotas and audit log" loading="lazy" />
+          <figcaption>The admin panel with accounts, quotas and the audit log.</figcaption>
         </figure>
         <figure class="gallery-item">
-          <img src="../img/strongroom5.png" alt="Project screenshot" loading="lazy" />
-          <figcaption class="">Here you can see the settings page.</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="../img/strongroom6.png" alt="Project screenshot" loading="lazy" />
-          <figcaption class="">Here you can see the settings page of a non-admin account.</figcaption>
+          <img src="../img/strongroom-settings.png" alt="Strongroom settings page" loading="lazy" />
+          <figcaption>Here you can see the settings page where you can check your storage and change your password.</figcaption>
         </figure>
       </div>
     </div>
@@ -174,7 +177,7 @@
   <!-- ── Prev / next ──────────────────────────────────── -->
   <div class="container proj-footer-nav">
     <a href="kivo" class="btn btn-outline">&larr; Prev: Kivo Roadmap</a>
-    <a href="../index#projects" class="btn btn-outline">All projects &rarr;</a>
+    <a href="cipher" class="btn btn-outline">Next: Cipher &rarr;</a>
   </div>
 
   <!-- ── Footer ───────────────────────────────────────── -->

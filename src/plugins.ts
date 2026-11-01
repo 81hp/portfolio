@@ -137,4 +137,26 @@ const MC_PLUGINS: McPlugin[] = [
     ],
     extra: "Not really optimised for speed. You add items to the forge manually with a command, but it works fine.",
   },
+  {
+    slug: "textdisplays",
+    name: "TextDisplays",
+    description: "A free and open source hologram plugin that combines DecentHolograms and FancyHolograms into one user friendly plugin.",
+    longDescription:
+      "TextDisplays is my free and open source hologram plugin. It combines DecentHolograms and FancyHolograms into one plugin that's actually easy to use. It uses Minecraft's own TextDisplay entities so there are no armor stands or packet hacks. You can scale holograms, use gradients, add floating item icons that spin and make holograms with multiple pages that cycle on a timer! I made this with a lot of help from AI. I came up with the idea and what it should do, and kept testing and tweaking it until it worked how i wanted.",
+    technologies: ["Java"],
+    platform: "Paper",
+    tags: ["Utility", "Holograms", "AI-assisted"],
+    features: [
+      "Built on native TextDisplay entities, no armor stands",
+      "Per-line editing with /td line add, set, insert and remove",
+      "Floating item icons that can glow and spin like DecentHolograms",
+      "Multi-page holograms that auto-cycle on a timer",
+      "Scaling, gradients, see-through text and different billboard modes",
+      "PlaceholderAPI support",
+    ],
+    extra: "Needs Paper (or a fork like Purpur) on 1.21+ and Java 21. Spigot isn't supported.",
+    links: {
+      github: "https://github.com/Findiepman/TextDisplays",
+    },
+  },
 ];

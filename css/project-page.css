@@ -234,10 +234,29 @@
   border: 2px solid var(--purple-deep);
   background: var(--bg);
   box-shadow: var(--px-shadow) var(--purple-deep);
+  display: flex;
+  flex-direction: column;
 }
 
+/* Same frame for every screenshot, whatever its size. The lightbox still shows the full image. */
 .gallery-item img {
   width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: top left;
+  background: var(--bg-tint);
+}
+
+/* For small or oddly shaped crops: show the whole screenshot instead of cropping it */
+.gallery-item--fit img {
+  object-fit: contain;
+  object-position: center;
+  padding: 0.75rem;
+  background: #1E1C1B;
+}
+
+.gallery-item figcaption {
+  flex: 1;
 }
 
 .gallery-item figcaption {
