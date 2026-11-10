@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Backtrack</title>
+  <meta name="description" content="Case study of the Backtrack project by Fin Diepman." />
+  <link rel="icon" href="../icon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/nav.css" />
+  <link rel="stylesheet" href="../css/contact.css" />
+  <link rel="stylesheet" href="../css/project-page.css" />
+</head>
+<body>
+
+  <!-- ── Navigation ───────────────────────────────────── -->
+  <header id="site-header">
+    <nav class="container nav-inner">
+      <a href="../index" class="nav-logo pixel">findiepman<span class="accent">.dev</span></a>
+
+      <ul class="nav-links">
+        <li><a href="../index#projects"     class="nav-link">Projects</a></li>
+        <li><a href="../minecraft"    class="nav-link">Minecraft</a></li>
+        <li><a href="../index#skills"       class="nav-link">Skills</a></li>
+        <li><a href="../index#about"        class="nav-link">About</a></li>
+        <li><a href="../index#commissions"  class="nav-link">Commissions</a></li>
+        <li><a href="../index#contact"      class="nav-link">Contact</a></li>
+      </ul>
+
+      <a href="mailto:fin@findiepman.dev" class="btn btn-solid nav-cta">Email me</a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="../index#projects"     class="mobile-link">Projects</a>
+      <a href="../minecraft"    class="mobile-link">Minecraft</a>
+      <a href="../index#skills"       class="mobile-link">Skills</a>
+      <a href="../index#about"        class="mobile-link">About</a>
+      <a href="../index#commissions"  class="mobile-link">Commissions</a>
+      <a href="../index#contact"      class="mobile-link">Contact</a>
+      <a href="mailto:fin@findiepman.dev" class="mobile-link accent">Email me</a>
+    </div>
+  </header>
+
+  <!-- ── Hero ─────────────────────────────────────────── -->
+  <section class="proj-hero">
+    <div class="container">
+      <a href="../index#projects" class="proj-back">&larr; all projects</a>
+      <p class="section-eyebrow pixel">project</p>
+      <h1 class="proj-title">Backtrack</h1>
+      <p class="proj-tagline">Backtrack is an instant replay clipper for Windows. It keeps the last 30 seconds of your screen, game sound and mic in memory, and when something cool happens you press F8 and it's saved as a clip.</p>
+      <div class="proj-actions">
+        <a href="https://github.com/Findiepman/BackTrack/releases/latest" target="_blank" rel="noopener" class="btn btn-solid">Download &#8599;</a>
+        <a href="https://github.com/Findiepman/BackTrack" target="_blank" rel="noopener" class="btn btn-outline">View code &#8599;</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <figure class="proj-shot">
+      <img src="../img/backtrack-record.png" alt="Screenshot of Backtrack" />
+    </figure>
+  </div>
+
+  <!-- ── Body ─────────────────────────────────────────── -->
+  <section class="proj-body">
+    <div class="container proj-body-inner">
+
+      <div class="proj-content">
+        <div class="proj-section">
+          <h2 class="proj-section-title">what it is</h2>
+          <p>I made Backtrack because i wanted something like Medal that doesn't use a ton of my PC while i'm gaming. It runs in the background and always holds the last few seconds of your screen. Press F8 and those seconds get saved as an mp4, with your game sound and your mic mixed in. Nothing gets written to your disk until you press it.</p>
+          <p>Your clips end up in a library where you can trim them, give them tags and notes, favorite them or put them in collections. You can also share a clip and get a link that plays right inside Discord. It can even repair Medal clips so your mic is actually heard.</p>
+          <p>I made this with a lot of help from AI. I came up with the idea and what it should do, and kept testing and tweaking it until it worked how i wanted.</p>
+        </div>
+
+        <div class="proj-section">
+          <h2 class="proj-section-title">how it's built</h2>
+          <p>It's written in C++ and only uses what Windows already ships with. No FFmpeg, no OBS and nothing extra to install.</p>
+          <ul>
+            <li>The screen is captured with Desktop Duplication and Direct3D 11</li>
+            <li>Video is encoded on your graphics card (AMD, NVIDIA or Intel) through Media Foundation, with Windows' software encoder as a fallback</li>
+            <li>Game sound and the mic are recorded with WASAPI, with noise suppression and push-to-talk for the mic</li>
+            <li>Trimming a clip doesn't re-encode anything, so it's done in a fraction of a second without losing quality</li>
+            <li>The window is HTML running in WebView2 and talks to the C++ side</li>
+            <li>It updates itself from the GitHub releases</li>
+          </ul>
+        </div>
+
+        <div class="proj-section">
+          <h2 class="proj-section-title">what i learned</h2>
+          <p>This was my first real C++ project and i learned how screen recording actually works under the hood, from grabbing the screen to encoding video and keeping sound and picture in sync.</p>
+        </div>
+      </div>
+
+      <aside class="proj-facts">
+        <div>
+          <p class="fact-label">year</p>
+          <p class="fact-value">2026</p>
+        </div>
+        <div>
+          <p class="fact-label">status</p>
+          <p class="fact-value">Out now! Still working on long recordings and screenshots.</p>
+        </div>
+        <div>
+          <p class="fact-label">built with</p>
+          <div class="fact-tags">
+            <span class="tag pixel">AI-assisted</span>
+            <span class="tag pixel">C++</span>
+            <span class="tag pixel">Direct3D 11</span>
+            <span class="tag pixel">Media Foundation</span>
+            <span class="tag pixel">WebView2</span>
+          </div>
+        </div>
+        <div>
+          <p class="fact-label">links</p>
+          <div class="fact-links">
+            <a href="https://github.com/Findiepman/BackTrack/releases/latest" target="_blank" rel="noopener">Download for Windows &#8599;</a>
+            <a href="https://github.com/Findiepman/BackTrack" target="_blank" rel="noopener">GitHub repo &#8599;</a>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- ── Gallery ──────────────────────────────────────── -->
+  <section class="proj-gallery">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow pixel">screenshots</p>
+        <h2 class="section-title">A closer look</h2>
+      </div>
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <img src="../img/backtrack-record.png" alt="Backtrack's Record page with the display, replay buffer, performance and audio" loading="lazy" />
+          <figcaption>The Record page. It shows which screen is being recorded, how full the replay buffer is and how much CPU and memory Backtrack itself uses.</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="../img/backtrack-clip.png" alt="A clip open in Backtrack with the player, trim bar and clip details" loading="lazy" />
+          <figcaption>This is what a clip looks like when you open it. You can play it, drag the handles to trim it and add tags and notes.</figcaption>
+        </figure>
+        <figure class="gallery-item gallery-item--fit">
+          <img src="../img/backtrack-video.png" alt="Backtrack's Capture &amp; Video settings" loading="lazy" />
+          <figcaption>The video settings. You pick the display, resolution, frame rate, encoder and bitrate here.</figcaption>
+        </figure>
+        <figure class="gallery-item gallery-item--fit">
+          <img src="../img/backtrack-replay.png" alt="Backtrack's Instant Replay settings" loading="lazy" />
+          <figcaption>Here you set how far back Backtrack keeps, anywhere from 5 seconds to 5 minutes, and it tells you how much memory that takes.</figcaption>
+        </figure>
+        <figure class="gallery-item gallery-item--fit">
+          <img src="../img/backtrack-audio.png" alt="Backtrack's Audio settings" loading="lazy" />
+          <figcaption>The audio settings. You can pick your mic and speakers, change the volume of both and turn on noise suppression or push-to-talk.</figcaption>
+        </figure>
+        <figure class="gallery-item gallery-item--fit">
+          <img src="../img/backtrack-hotkeys.png" alt="Backtrack's Hotkeys settings" loading="lazy" />
+          <figcaption>Every hotkey can be changed. F8 saves a clip, and they work while you're in a game.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Prev / next ──────────────────────────────────── -->
+  <div class="container proj-footer-nav">
+    <a href="skript-extension" class="btn btn-outline">&larr; Prev: Skript Extension</a>
+    <a href="kivo-office" class="btn btn-outline">Next: Kivo Office &rarr;</a>
+  </div>
+
+  <!-- ── Footer ───────────────────────────────────────── -->
+  <footer class="proj-footer">
+    <div class="container">
+      <div class="contact-bottom">
+        <span class="footer-note">&copy; <span id="year"></span> Fin Diepman</span>
+        <div class="social-links">
+          <a href="https://github.com/FinDiepman" target="_blank" rel="noopener" class="social-link">GitHub</a>
+          <a href="mailto:fin@findiepman.dev" class="social-link">Email</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../dist/app.js" defer></script>
+</body>
+</html>

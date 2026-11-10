@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kivo Office</title>
+  <meta name="description" content="Case study of the Kivo Office project by Fin Diepman." />
+  <link rel="icon" href="../icon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/nav.css" />
+  <link rel="stylesheet" href="../css/contact.css" />
+  <link rel="stylesheet" href="../css/project-page.css" />
+</head>
+<body>
+
+  <!-- ── Navigation ───────────────────────────────────── -->
+  <header id="site-header">
+    <nav class="container nav-inner">
+      <a href="../index" class="nav-logo pixel">findiepman<span class="accent">.dev</span></a>
+
+      <ul class="nav-links">
+        <li><a href="../index#projects"     class="nav-link">Projects</a></li>
+        <li><a href="../minecraft"    class="nav-link">Minecraft</a></li>
+        <li><a href="../index#skills"       class="nav-link">Skills</a></li>
+        <li><a href="../index#about"        class="nav-link">About</a></li>
+        <li><a href="../index#commissions"  class="nav-link">Commissions</a></li>
+        <li><a href="../index#contact"      class="nav-link">Contact</a></li>
+      </ul>
+
+      <a href="mailto:fin@findiepman.dev" class="btn btn-solid nav-cta">Email me</a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="../index#projects"     class="mobile-link">Projects</a>
+      <a href="../minecraft"    class="mobile-link">Minecraft</a>
+      <a href="../index#skills"       class="mobile-link">Skills</a>
+      <a href="../index#about"        class="mobile-link">About</a>
+      <a href="../index#commissions"  class="mobile-link">Commissions</a>
+      <a href="../index#contact"      class="mobile-link">Contact</a>
+      <a href="mailto:fin@findiepman.dev" class="mobile-link accent">Email me</a>
+    </div>
+  </header>
+
+  <!-- ── Hero ─────────────────────────────────────────── -->
+  <section class="proj-hero">
+    <div class="container">
+      <a href="../index#projects" class="proj-back">&larr; all projects</a>
+      <p class="section-eyebrow pixel">project</p>
+      <h1 class="proj-title">Kivo Office</h1>
+      <p class="proj-tagline">Kivo Office is a version of Kivo Roadmap made for companies. IT invites the managers, managers invite their team and run the roadmaps, and everyone works on the tasks assigned to them.</p>
+      <div class="proj-actions">
+        <a href="https://github.com/Findiepman/Kivo-Office" target="_blank" rel="noopener" class="btn btn-solid">View code &#8599;</a>
+        <a href="kivo" class="btn btn-outline">See Kivo Roadmap</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <figure class="proj-shot">
+      <img src="../img/kivo-office-it.png" alt="Screenshot of Kivo Office" />
+    </figure>
+  </div>
+
+  <!-- ── Body ─────────────────────────────────────────── -->
+  <section class="proj-body">
+    <div class="container proj-body-inner">
+
+      <div class="proj-content">
+        <div class="proj-section">
+          <h2 class="proj-section-title">what it is</h2>
+          <p>Kivo Office takes my Kivo Roadmap and turns it into something a whole company can use instead of Trello. There are three kinds of accounts: IT admins look after everything, managers make roadmaps and decide who works on what, and team members work on their own tasks and comment on the rest.</p>
+          <p>Everything that happens gets written to a log that nobody can change, and accounts are never deleted. When someone leaves they get deactivated, so the history always stays complete.</p>
+          <p>I made this with a lot of help from AI. I came up with the idea and what it should do, and kept testing and tweaking it until it worked how i wanted.</p>
+        </div>
+
+        <div class="proj-section">
+          <h2 class="proj-section-title">how it's built</h2>
+          <p>It's a small Node JS + Express server with SQLite, and a frontend in plain HTML, CSS and Javascript. One install is for one company.</p>
+          <ul>
+            <li>People join with a one time invite link that expires after 48 hours and pick their own password</li>
+            <li>Passwords are stored as bcrypt hashes and the invite and reset links are only stored as hashes too</li>
+            <li>Sessions live on the server and end when you log out, get deactivated or reset your password</li>
+            <li>The server checks every rule, the pages only hide the buttons you can't use</li>
+            <li>The database itself makes sure log entries can never be edited or removed</li>
+            <li>Too many wrong passwords locks sign in for 15 minutes</li>
+          </ul>
+        </div>
+      </div>
+
+      <aside class="proj-facts">
+        <div>
+          <p class="fact-label">year</p>
+          <p class="fact-value">2026</p>
+        </div>
+        <div>
+          <p class="fact-label">status</p>
+          <p class="fact-value">Built from an approved prototype. Always open to suggestions.</p>
+        </div>
+        <div>
+          <p class="fact-label">license</p>
+          <p class="fact-value">Source-available, not open source. You can read the code and send pull requests, but you can't host, share or reuse it somewhere else.</p>
+        </div>
+        <div>
+          <p class="fact-label">built with</p>
+          <div class="fact-tags">
+            <span class="tag pixel">AI-assisted</span>
+            <span class="tag pixel">Javascript</span>
+            <span class="tag pixel">Node JS</span>
+            <span class="tag pixel">SQLite</span>
+            <span class="tag pixel">Docker</span>
+          </div>
+        </div>
+        <div>
+          <p class="fact-label">links</p>
+          <div class="fact-links">
+            <a href="https://github.com/Findiepman/Kivo-Office" target="_blank" rel="noopener">GitHub repo &#8599;</a>
+            <a href="https://github.com/Findiepman/Kivo-Office/blob/main/LICENSE" target="_blank" rel="noopener">License &#8599;</a>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- ── Gallery ──────────────────────────────────────── -->
+  <section class="proj-gallery">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow pixel">screenshots</p>
+        <h2 class="section-title">A closer look</h2>
+        <p class="section-sub">First finished build is being used by my dad's company for testing.</p>
+      </div>
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <img src="../img/kivo-office-it.png" alt="Kivo Office IT admin dashboard with roadmaps, managers and IT admins" loading="lazy" />
+          <figcaption>The IT admin dashboard. Every roadmap is on the left and every manager on the right, with the team members they invited under them.</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="../img/kivo-office-roadmaps.png" alt="A manager's roadmaps in Kivo Office" loading="lazy" />
+          <figcaption>This is what a manager sees. All the roadmaps they own and how far along each one is.</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="../img/kivo-office-board.png" alt="A Kivo Office roadmap in board view" loading="lazy" />
+          <figcaption>A roadmap in board view. You drag a card to another column, and the column turns red if you're not allowed to drop it there.</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="../img/kivo-office-list.png" alt="A Kivo Office roadmap in list view" loading="lazy" />
+          <figcaption>The same roadmap as a list. Only the people a task is assigned to can edit it, everyone else can read it and comment.</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="../img/kivo-office-team.png" alt="A manager's team page in Kivo Office" loading="lazy" />
+          <figcaption>My team. Managers invite their own team members here with a one time link, so nobody ever picks a password for someone else.</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="../img/kivo-office-activity.png" alt="The append-only activity log in Kivo Office" loading="lazy" />
+          <figcaption>The activity log. Everything that happens is logged and nobody can edit or remove an entry, not even IT.</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="../img/kivo-office-passwords.png" alt="The Kivo Office password log" loading="lazy" />
+          <figcaption>The password log shows which invite and reset links were sent, by who and when they were used. Passwords themselves are never shown.</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="../img/kivo-office-login.png" alt="The Kivo Office login screen" loading="lazy" />
+          <figcaption>The login screen. This is from the prototype, so it has a demo account switcher that the real app doesn't have.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Prev / next ──────────────────────────────────── -->
+  <div class="container proj-footer-nav">
+    <a href="backtrack" class="btn btn-outline">&larr; Prev: Backtrack</a>
+    <a href="../index#projects" class="btn btn-outline">All projects &rarr;</a>
+  </div>
+
+  <!-- ── Footer ───────────────────────────────────────── -->
+  <footer class="proj-footer">
+    <div class="container">
+      <div class="contact-bottom">
+        <span class="footer-note">&copy; <span id="year"></span> Fin Diepman</span>
+        <div class="social-links">
+          <a href="https://github.com/FinDiepman" target="_blank" rel="noopener" class="social-link">GitHub</a>
+          <a href="mailto:fin@findiepman.dev" class="social-link">Email</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../dist/app.js" defer></script>
+</body>
+</html>
